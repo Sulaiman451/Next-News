@@ -1,12 +1,13 @@
 import Image from "next/image";
+import styles from "../styles/EOM.module.css";
 
 const EOM = ({ employee }) => {
   return (
     <div className="page-container">
-      <div>
+      <div className={styles.main}>
         <h1>Employee of The Month</h1>
 
-        <div>
+        <div className={styles.employeeOfTheMonth}>
           <h3>{employee.name}</h3>
           <h6>{employee.position}</h6>
           {/* <Image src={employee.image} alt="employee image" /> */}
