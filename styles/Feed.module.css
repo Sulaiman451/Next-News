@@ -12,11 +12,15 @@
 }
 .post img {
   width: 100%;
+  border-radius: 10%;
 }
 .post h1 {
   font-size: 16px;
   cursor: pointer;
   text-align: center;
+}
+.post h1:hover {
+  color: rgb(168, 168, 168);
 }
 .paginator {
   width: 100%;
@@ -28,6 +32,9 @@
 }
 .paginator .active {
   cursor: pointer;
+}
+.paginator .active:hover {
+  color: rgb(87, 80, 80);
 }
 .paginator .disabled {
   cursor: not-allowed;
