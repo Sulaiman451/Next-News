@@ -13,7 +13,7 @@ const EOM = ({ employee }) => {
         <div className={styles.employeeOfTheMonth}>
           <h3>{employee.name}</h3>
           <h6>{employee.position}</h6>
-          {/* <Image src={employee.image} alt="employee image" /> */}
+          <img src={employee.image} alt="employee image" />
           <p>{employee.description}</p>
         </div>
       </div>
