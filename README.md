@@ -1,34 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Overview
 
-## Getting Started
+This is a web-based news app which uses Next.js and the News API. The user will initially see a home page, and can go to the feed page which will show a list of England-based news articles (for a maximum of five pages). If the user clicks on the title of an article, they will be redirected to the exact article, beyond the app. There is a paginator at the bottom of the feed page. The toolbar also contains links to my LinkedIn and Github.
 
-First, run the development server:
+# The Finer Details
+
+The Home page was very simple to construct due to there being minimal content.
+
+The Toolbar component makes use of Next's useRouter hook so that the router object could be accessed. This resulted in the ability to add an onclick event to the home and feed pages for redirecting to their respective paths. For LinkedIn and Github, window.location object was used in the same way.
+
+The feed page is stored in the feed folder, but the file's name if [slug].jsx. This is to enable dynamic routing. In this instance, it would mean that the route would say /feed/page-number (e.g., /feed/2 if the user is on page 2). Various parameters from the API such as the title, description, and image are used in this file, so that they get displayed.
+
+The paginator, which is part of the Feed page, uses ternary operations to determine how it should be displayed. If the user is on page 1, the "Previous Page" button is greyed out and the not allowed symbol is displayed if the user hovers over the button. If the user is on page 5, the "Next Page" button is greyed out and displays the not allowed symbol if hovered over.
+
+The API response code uses getServerSideProps alongside async/await syntax to determine what the Feed page should display in which scenrio.
+
+# Preview
+
+**Home:**
+![Next News (Home)](https://user-images.githubusercontent.com/70066475/131389727-191daf43-0480-4f17-8a94-79de76e48241.png)
+
+**Feed:**
+![Next News (Feed)](https://user-images.githubusercontent.com/70066475/131389742-8490df73-61ca-4f80-9c83-1e73e7338aa8.png)
+
+# See Live
+
+https://next-news-theta.vercel.app/
+
+# Getting Started
+
+Start by cloning this repo from your command line:
 
 ```bash
-npm run dev
-# or
-yarn dev
+# Clone this repository
+$ git clone https://github.com/Sulaiman451/Next-News
+
+# Go into the repository
+$ cd Next-News
+
+# Remove current origin repository
+$ git remote remove origin
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then, install the dependencies using NPM or Yarn:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Using NPM:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```bash
+# Install core dependencies
+$ npm install
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+# Install Next.js if you do not already have it installed
+$ npm install next
 
-## Learn More
+# Start the development server
+$ npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Using Yarn:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Install core dependencies
+$ yarn
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Install Next.js if you do not already have it installed
+$ yarn next
 
-## Deploy on Vercel
+# Start the development server
+$ yarn dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**NOTE:** If you run into issues installing the dependencies using NPM, use the command below:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+# Install dependencies with all permissions
+$ sudo npm install --unsafe-perm-true --allow-root
+```
+
+Once your server has started, go to http://localhost:3000 in your browser or ctrl + right-click the same URL through the terminal's output. This will allow you to see the site running on a local development server.
