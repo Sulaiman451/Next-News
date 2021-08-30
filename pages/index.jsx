@@ -14,9 +14,13 @@ export default function Home() {
         <div className={styles.main}>
           <h1>Next News</h1>
           <h3>
-            A Next.js app for accessing the latest news articles via the News
-            API.
+            A Next.js app for accessing the latest news about England via the
+            News API.
           </h3>
+
+          <div className={styles.footer}>
+            <footer>Next News &#169; 2021 by Sulaiman Rahman</footer>
+          </div>
         </div>
       </div>
     </>

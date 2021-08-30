@@ -8,4 +8,14 @@
 
 .main h1 {
   margin-top: -50px;
+  color: rgb(37, 47, 180);
+}
+
+.main h3 {
+  color: rgb(39, 40, 43);
+}
+
+.main footer {
+  margin-top: 50px;
+  font-weight: 300;
 }
