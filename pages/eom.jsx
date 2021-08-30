@@ -1,9 +1,12 @@
 import Image from "next/image";
+import { Toolbar } from "../components/Toolbar";
 import styles from "../styles/EOM.module.css";
 
 const EOM = ({ employee }) => {
   return (
     <div className="page-container">
+      <Toolbar />
+
       <div className={styles.main}>
         <h1>Employee of The Month</h1>
 
